@@ -1,7 +1,7 @@
 const { Client } = require('eris');
 const Database = require('better-sqlite3');
 const db = new Database('star.db');
-const client = new Client('NDk1MDAwNTQ5NzI1NDM3OTYy.DtH5sg.jyIkhjnxlAtThBI94zfyHC4ooo8');
+const client = new Client('abcdefg123456');
 
 db.prepare('CREATE TABLE IF NOT EXISTS starids (msgid TEXT PRIMARY KEY, starid TEXT NOT NULL)').run();
 
