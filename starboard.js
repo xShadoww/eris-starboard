@@ -1,6 +1,4 @@
-const {
-    Client
-} = require('eris');
+const { Client } = require('eris');
 const Database = require('better-sqlite3');
 const db = new Database('star.db');
 const client = new Client('NDk1MDAwNTQ5NzI1NDM3OTYy.DtH5sg.jyIkhjnxlAtThBI94zfyHC4ooo8');
@@ -8,6 +6,7 @@ const client = new Client('NDk1MDAwNTQ5NzI1NDM3OTYy.DtH5sg.jyIkhjnxlAtThBI94zfyH
 db.prepare('CREATE TABLE IF NOT EXISTS starids (msgid TEXT PRIMARY KEY, starid TEXT NOT NULL)').run();
 
 client.on('messageReactionAdd', async (message, emoji, user) => {
+
     if (message.channel.type !== 0 || emoji.name !== '⭐') return;
 
     const channel = client.getChannel(message.channel.id);
@@ -18,6 +17,8 @@ client.on('messageReactionAdd', async (message, emoji, user) => {
     const msg = await channel.getMessage(message.id);
     const stars = (await msg.getReaction('⭐', msg.reactions['⭐'].count)).filter(u => u.id !== msg.author.id && !client.users.get(u.id).bot).length;
 
+    if (stars < 5) return;
+
     if (msg.content.length === 0 && msg.attachments.length === 0 && (!msg.embeds[0] || msg.embeds[0].type !== 'image')) return;
 
     const starId = await getMessageFromDatabase(msg.id);
@@ -26,7 +27,7 @@ client.on('messageReactionAdd', async (message, emoji, user) => {
         if (!stars) return;
 
         const starMsg = await starboard.createMessage({
-            content: `**__Starboard:__** ${stars} ⭐ - <#${msg.channel.id}> ${msg.author.username}#${msg.author.discriminator} has made it!`,
+            content: `**__Starboard:__ ${stars} ⭐ - <#${msg.channel.id}> ${msg.author.username}#${msg.author.discriminator} has made it!**`,
             embed: {
                 color: 16775619,
                 footer: {
