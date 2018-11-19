@@ -46,7 +46,7 @@ client.on('messageReactionAdd', async (message, emoji, user) => {
                     },
                     {
                         name: "Jump To Message",
-                        value: `[Click Here](https://discordapp.com/channels/493152507414052867/${msg.channel.id}/${msg.id})`
+                        value: `[Click Here](https://discordapp.com/channels/${msg.guild.id}/${msg.channel.id}/${msg.id})`
                     },
                 ],
             },
