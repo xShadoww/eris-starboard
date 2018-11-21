@@ -15,5 +15,4 @@
 [![](http://i.imgur.com/cneFUDf.png)](http://i.imgur.com/cneFUDf.png)
 
 # Invite?
-
-https://discordapp.com/api/oauth2/authorize?client_id=513190667783110695&permissions=1628818753&scope=bot
+Can only be self hostet. No desire to change in the future.
