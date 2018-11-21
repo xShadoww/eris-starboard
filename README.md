@@ -16,3 +16,7 @@
 
 # Invite?
 Can only be self hosted. No desire to change in the future.
+
+# Support Server
+### Flight Development
+- [ **Discord Invite**](https://discord.gg/8kSexNf " **Discord Invite**") - Join for support, help, quesitons & projects
