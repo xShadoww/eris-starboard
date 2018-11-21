@@ -15,4 +15,4 @@
 [![](http://i.imgur.com/cneFUDf.png)](http://i.imgur.com/cneFUDf.png)
 
 # Invite?
-Can only be self hostet. No desire to change in the future.
+Can only be self hosted. No desire to change in the future.
