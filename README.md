@@ -8,7 +8,6 @@
 ## Current Settings
 - Min. ammount of reactions is 5.
 - Deletes, edits & updates if reactions are removed or added.
-- Runs 24/7, no settings can be changed. (**yet**)
 
 ## Examples
 
@@ -18,5 +17,5 @@
 Can only be self hosted. No desire to change in the future.
 
 # Support Server
-### Flight Development
+### Highbrand
 - [ **Discord Invite**](https://discord.gg/8kSexNf " **Discord Invite**") - Join for support, help, quesitons & projects
