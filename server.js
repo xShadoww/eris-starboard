@@ -1,7 +1,7 @@
 const Eris = require('eris');
 const Database = require('better-sqlite3');
 const db = new Database('star.db');
-const client = new Eris(process.env.TOKEN);
+const client = new Eris("ENTER YOUR TOKEN HERE IN QUOTES");
 
 db.prepare('CREATE TABLE IF NOT EXISTS starids (msgid TEXT PRIMARY KEY, starid TEXT NOT NULL)').run();
 
@@ -112,19 +112,3 @@ function resolveAttachment(msg) {
 }
 
 client.connect();
-
-/* Uptime Robot
-/ - This can be removed if not hosted on Glitch
-- You can also use an external service for uptime */
-
-const http = require('http');
-const express = require('express');
-const app = express();
-app.get("/", (request, response) => {
-    response.sendStatus(200);
-});
-
-app.listen(process.env.PORT);
-setInterval(() => {
-    http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
-}, 280000);
